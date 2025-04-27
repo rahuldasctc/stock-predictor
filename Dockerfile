@@ -1,5 +1,5 @@
-# Use Node 16 as the base image (n8n compatible)
-FROM node:16
+# Use Node 18 as the base image (n8n compatible)
+FROM node:18
 
 # Set working directory
 WORKDIR /usr/src/app
