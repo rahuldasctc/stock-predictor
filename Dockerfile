@@ -13,5 +13,9 @@ COPY . .
 # Expose the default n8n port (Render will override with PORT env var)
 EXPOSE 5678
 
-# Command to start n8n (Render sets the PORT environment variable automatically)
+# Set environment variables for n8n
+ENV N8N_HOST=0.0.0.0
+ENV PORT=5678
+
+# Command to start n8n
 CMD ["n8n", "start"]
