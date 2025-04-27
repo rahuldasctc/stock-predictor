@@ -4,8 +4,7 @@ FROM node:16
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy package.json (if you have one) and install n8n globally
-COPY package.json ./
+# Install n8n globally
 RUN npm install -g n8n
 
 # Copy all files to the container
