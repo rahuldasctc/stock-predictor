@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: stock-predictor
+    env: docker
+    plan: free
+    region: oregon
+    autoDeploy: false
+    healthCheckPath: /healthz
+    envVars:
+      - key: N8N_HOST
+        value: stock-predictor.onrender.com
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
+      - key: NODE_ENV
+        value: production
