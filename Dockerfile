@@ -1,17 +1,15 @@
-# Use Node 18 as the base image (n8n compatible)
 FROM node:18
-
-# Set working directory
 WORKDIR /usr/src/app
-
-# Install n8n globally
 RUN npm install -g n8n
-
-# Copy all files to the container
 COPY . .
-
-# Expose the default n8n port (Render will override with PORT env var)
 EXPOSE 5678
-
-# Command to start n8n
+ENV N8N_HOST=0.0.0.0
+ENV N8N_PORT=$PORT
+ENV NBN_RUNNERS_ENABLED=true
+ENV N8N_DB_TYPE=postgresdb
+ENV N8N_DB_POSTGRESDB_HOST=dpg-d0aq73h5pdvs73c1p7og-a
+ENV N8N_DB_POSTGRESDB_PORT=5432
+ENV N8N_DB_POSTGRESDB_DATABASE=n8n_db_lcjb
+ENV N8N_DB_POSTGRESDB_USER=n8n_db_lcjb_user
+ENV N8N_DB_POSTGRESDB_PASSWORD=enFgEGSHOBpQPLSCSmhFXC97f00ukd3C
 CMD ["n8n", "start"]
