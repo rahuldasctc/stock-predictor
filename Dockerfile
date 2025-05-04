@@ -1,4 +1,4 @@
-FROM node:18
+FROM n8nio/n8n:latest
 WORKDIR /usr/src/app
 RUN npm install -g n8n
 COPY . .
